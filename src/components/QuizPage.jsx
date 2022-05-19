@@ -10,22 +10,15 @@ import { nanoid } from 'nanoid';
 export default function QuizPage() {
   const dispatch = useDispatch();
   const arr = useSelector((store) => store.questions);
-  console.log(arr);
-
   const questions = arr.map((item) => {
     return <Question item={item} answers={item} key={item.id} />;
   });
 
   return (
     <div className="quiz-page">
-      <div className="container">
-        <Button text="Check answers" padding="10px 21px" />
+      <div className="quiz__container">
         {questions}
-        <button
-          onClick={() => {
-            dispatch(fetchQuestions());
-          }}
-        ></button>
+        <Button text="Check answers" padding="10px 21px" />
       </div>
     </div>
   );

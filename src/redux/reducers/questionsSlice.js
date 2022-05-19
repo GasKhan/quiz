@@ -6,11 +6,6 @@ const questionsSlice = createSlice({
   name: 'questions',
   initialState: [],
   reducers: {
-    set: {
-      reducer: (state, action) => {
-        return state.concat(action.payload);
-      },
-    },
     isChosen: {
       reducer: (state, action) => {
         const { parentId, id } = action.payload;
@@ -28,14 +23,6 @@ const questionsSlice = createSlice({
           }
           return question;
         });
-        // const chosenQuestion = state.find(
-        //   (question) => question.id === parentId
-        // );
-        // chosenQuestion.answers.forEach((answer) => {
-        //   if (answer.id === id) answer.isChosen = true;
-        //   answer.isChosen = false;
-        // });
-        // return state;
       },
     },
   },
@@ -47,5 +34,5 @@ const questionsSlice = createSlice({
   },
 });
 
-export let { set: setQuestions, isChosen } = questionsSlice.actions;
+export let { isChosen } = questionsSlice.actions;
 export default questionsSlice.reducer;

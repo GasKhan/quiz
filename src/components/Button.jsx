@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.css';
-import { setQuestions } from '../redux/reducers/questionsSlice';
+import fetchQuestions from '../redux/reducers/fetchQuestions';
 import { useDispatch } from 'react-redux';
 
 export default function Button(props) {
@@ -14,7 +14,7 @@ export default function Button(props) {
       <button
         className="btn"
         style={style}
-        onClick={() => dispatch(setQuestions)}
+        onClick={() => dispatch(fetchQuestions())}
         disabled={false}
       >
         {props.text}
