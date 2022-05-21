@@ -1,13 +1,16 @@
-import { useState } from 'react';
-import './QuizPage.css';
-import Question from './Question';
-import fetchQuestions from '../redux/reducers/fetchQuestions';
-import { add, clear } from '../redux/reducers/scoresSlice';
-import { finish, start } from '../redux/reducers/finishSlice';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { add, clear } from '../../redux/reducers/scoresSlice';
+import { finish, start } from '../../redux/reducers/finishSlice';
+
+import fetchQuestions from '../../redux/js/fetchQuestions';
+
+import './QuizPage.css';
+import Question from '../question/Question';
 
 export default function QuizPage() {
   const dispatch = useDispatch();
+
   const questionsArr = useSelector((store) => store.questions);
   const scores = useSelector((store) => store.scores);
   const finished = useSelector((store) => store.finish);
@@ -22,6 +25,12 @@ export default function QuizPage() {
     dispatch(finish());
   }
 
+  const resetQuestions = async () => {
+    dispatch(clear());
+    await dispatch(fetchQuestions());
+    dispatch(start());
+  };
+
   const questions = questionsArr.map((item) => {
     return <Question item={item} answers={item} key={item.id} />;
   });
@@ -35,22 +44,12 @@ export default function QuizPage() {
             <p className="quiz__results-text">
               You scored {scores}/5 correct answers
             </p>
-            <button
-              className="quiz__results-btn btn"
-              onClick={async () => {
-                dispatch(clear());
-                await dispatch(fetchQuestions());
-                dispatch(start());
-              }}
-            >
+            <button className="quiz__results-btn btn" onClick={resetQuestions}>
               Play again
             </button>
           </div>
         ) : (
-          <button
-            className="quiz__replay-btn btn"
-            onClick={() => checkScores()}
-          >
+          <button className="quiz__replay-btn btn" onClick={checkScores}>
             Check answers
           </button>
         )}

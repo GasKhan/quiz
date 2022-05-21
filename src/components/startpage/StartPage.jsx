@@ -1,15 +1,18 @@
-import React from 'react';
-import './StartPage.css';
-import './Button.css';
 import { useDispatch } from 'react-redux';
-import fetchQuestions from '../redux/reducers/fetchQuestions';
+
+import fetchQuestions from '../../redux/js/fetchQuestions';
+
+import './StartPage.css';
+import '../Button.css';
 
 export default function StartPage(props) {
   const dispatch = useDispatch();
+
   function beginNewGame() {
     props.handler();
     dispatch(fetchQuestions());
   }
+
   return (
     <div className="start">
       <div className="start__container">

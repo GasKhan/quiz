@@ -6,11 +6,11 @@
   min-height: 20px;
   border: 1px solid #4d589e;
   border-radius: 7px;
-  padding: 2px;
+  padding: 2px 3px;
   margin-right: 13px;
   font-weight: 500;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 15px;
+  line-height: 15px;
   cursor: pointer;
 }
 

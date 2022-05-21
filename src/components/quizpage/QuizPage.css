@@ -1,12 +1,12 @@
 .quiz-page {
   background-color: #f5f7fb;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .quiz__container {
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 40px 0px 25px;
+  padding: 20px 0px 25px;
   display: flex;
   flex-direction: column;
 }
@@ -18,7 +18,7 @@
 }
 
 .quiz__results-text {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 16px;
   font-weight: 500;
   margin-right: 20px;
@@ -26,8 +26,8 @@
 
 .quiz__results-btn {
   padding: 8px 14px;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 14px;
+  line-height: 15px;
   font-weight: 500;
 }
 

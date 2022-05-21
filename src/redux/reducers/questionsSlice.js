@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import fetchQuestions from './fetchQuestions';
-import createQuestions from './createQuestions';
+import fetchQuestions from '../js/fetchQuestions';
+import createQuestions from '../js/createQuestions';
 
 const questionsSlice = createSlice({
   name: 'questions',
@@ -26,6 +26,7 @@ const questionsSlice = createSlice({
       },
     },
   },
+
   extraReducers: {
     [fetchQuestions.fulfilled]: (state, action) => {
       const data = createQuestions(action.payload);

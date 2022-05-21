@@ -1,8 +1,8 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { mark } from '../../redux/reducers/questionsSlice';
+
 import './Answer.css';
-import { useDispatch } from 'react-redux';
-import { mark } from '../redux/reducers/questionsSlice';
 
 export default function Answer(props) {
   const finished = useSelector((store) => store.finish);

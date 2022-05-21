@@ -1,8 +1,7 @@
-import './App.css';
-import QuizPage from './components/QuizPage';
-import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import StartPage from './components/StartPage';
+
+import QuizPage from './components/quizpage/QuizPage';
+import StartPage from './components/startpage/StartPage';
 
 function App() {
   const [startGame, setStartGame] = useState(false);
