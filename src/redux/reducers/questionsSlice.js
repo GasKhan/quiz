@@ -6,7 +6,7 @@ const questionsSlice = createSlice({
   name: 'questions',
   initialState: [],
   reducers: {
-    isChosen: {
+    mark: {
       reducer: (state, action) => {
         const { parentId, id } = action.payload;
 
@@ -34,5 +34,5 @@ const questionsSlice = createSlice({
   },
 });
 
-export let { isChosen } = questionsSlice.actions;
+export const { mark } = questionsSlice.actions;
 export default questionsSlice.reducer;
