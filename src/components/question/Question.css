@@ -14,6 +14,7 @@
 
 .question__list {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   align-items: center;
   padding: 0;

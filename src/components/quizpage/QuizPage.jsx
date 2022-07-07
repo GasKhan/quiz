@@ -15,6 +15,8 @@ export default function QuizPage() {
   const scores = useSelector((store) => store.scores);
   const finished = useSelector((store) => store.finish);
 
+  console.log(questionsArr);
+
   function checkScores() {
     questionsArr.forEach((question) => {
       const rightAnswer = question.answers.find((answer) => answer.isTrue);
